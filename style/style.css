@@ -1,0 +1,411 @@
+@font-face {
+  font-family: "HandTypo";
+  src: url("/Font/Handtypo.ttf");
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav #navBar {
+  position: fixed;
+  margin: 0 auto;
+  width: 90%;
+  height: 120px;
+  border-bottom: 40px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  right: 0;
+  left: 0;
+}
+
+nav #navBar div {
+  width: 300px;
+  height: 100px;
+  border: 2px solid black;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav #navBar a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 0px 4px whitesmoke;
+}
+
+nav #navBar #nav1 {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  font-size: 35px;
+  background-image: url(/Img/profilCircle.png);
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-position: 15px center;
+}
+
+nav #navBar #nav2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 27px;
+}
+
+nav #navBar #nav3 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 27px;
+}
+
+nav #navBar #nav4 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 37px;
+  font-family: "HandTypo";
+}
+
+nav #navBar #nav5 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 27px;
+}
+
+nav #navBar #nav6 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 27px;
+}
+
+nav #navBar #nav7 {
+  cursor: pointer;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  font-size: 35px;
+  background-position: center center;
+}
+
+nav #navBar #nav7 img {
+  width: 90px;
+}
+
+nav #navBar #nav7 span {
+  text-shadow: 0px 4px whitesmoke;
+}
+
+#cart-Box {
+  overflow: auto;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  margin: 120px auto;
+  background-color: white;
+  width: 90%;
+  height: 500px;
+  border: 5px Solid black;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ". title ." ". items ." ". total .";
+  display: none;
+}
+
+#cart-Box .mytitle {
+  font-size: 50px;
+  text-align: center;
+  height: 20px;
+  padding-top: 10px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: title;
+  text-shadow: 2px 2px #888888;
+}
+
+#cart-Box #list-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 30px;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: items;
+}
+
+#cart-Box #list-items .item-wrapper {
+  margin-left: 30px;
+}
+
+#cart-Box #list-items .item {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 15em;
+}
+
+#cart-Box #list-items .item img {
+  max-height: 85%;
+  max-width: 100%;
+}
+
+#cart-Box #list-items .item #taBort {
+  margin-top: 5px;
+}
+
+#cart-Box #list-items h2 {
+  font-weight: 700;
+}
+
+#cart-Box #total {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: total;
+  text-align: center;
+  font-size: 1.4em;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+#cart-Box #total #buyBtn {
+  margin-top: 5px;
+  margin-left: 4em;
+}
+
+#cart-Box #total #clearBtn {
+  float: right;
+  margin-right: 15px;
+  margin-top: 6px;
+}
+
+main #CarouselFront {
+  padding-top: 120px;
+}
+
+main #CarouselFront img {
+  margin: 50px auto;
+}
+
+main #blackBox {
+  height: 100px;
+  background-color: black;
+}
+
+main #Clothes {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.5em;
+      grid-template-areas: ". . . . ."  ". box1 box2 box3 ." ". box4 box5 box6 ." ". . . . .";
+}
+
+main #Clothes div {
+  cursor: pointer;
+  width: 262px;
+  height: 390px;
+  border: 3px solid #c5c5c5;
+  position: relative;
+  text-align: center;
+}
+
+main #Clothes div:hover {
+  border: 3px solid black;
+  display: block;
+}
+
+main #Clothes div:hover #overTextBox {
+  display: block;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 2px #ffffff;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.61);
+  border-radius: 12px;
+}
+
+main #Clothes div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main #Clothes div .SelectQuatity {
+  border: 6px solid black;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: -3px;
+  left: -3px;
+  background-color: rgba(255, 255, 255, 0.61);
+  text-align: center;
+}
+
+main #Clothes div .SelectQuatity .AddThisManyItems {
+  width: 60px;
+  position: absolute;
+  left: 95px;
+  top: 170px;
+  border: 3px solid black;
+}
+
+main #Clothes div .SelectQuatity button {
+  left: 99px;
+  top: 203px;
+  position: absolute;
+}
+
+main #Clothes #overTextBox {
+  display: none;
+}
+
+main #Clothes .buyBtn {
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  position: absolute;
+  border-radius: 25px;
+}
+
+main #Clothes .clothes1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: box1;
+}
+
+main #Clothes .clothes2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: box2;
+}
+
+main #Clothes .clothes3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: box3;
+}
+
+main #Clothes .clothes4 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: box4;
+}
+
+main #Clothes .clothes5 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: box5;
+}
+
+main #Clothes .clothes6 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: box6;
+}
+
+#orderComplete {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  margin: 73px 305px !important;
+  width: 500px;
+  height: 300px;
+  background: black url("/Img/lotusflower.png") 16px bottom/85px no-repeat;
+  text-align: center;
+}
+
+#orderComplete h1 {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: whitesmoke;
+  margin: 65px;
+}
+
+#orderComplete button {
+  position: relative;
+  top: 7px;
+  left: 225px;
+}
+/*# sourceMappingURL=style.css.map */

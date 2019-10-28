@@ -1,0 +1,283 @@
+@font-face{
+    font-family: "HandTypo";
+    src: url("/Font/Handtypo.ttf");
+}
+
+@import './resetsheet';
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
+
+html {scroll-behavior: smooth;};
+
+nav{
+ #navBar{
+     position: fixed;
+     margin: 0 auto ;
+     width: 90%;
+     height: 120px;
+     border-bottom: 40px solid rgb(0, 0, 0);
+     border-left: 5px solid rgb(0, 0, 0);
+     border-right: 5px solid rgb(0, 0, 0);
+     @include flexCenter();
+     z-index: 1;
+     right: 0;
+     left: 0;
+   div{
+       width: 300px;
+       height: 100px;
+       border: 2px solid black;
+       text-align: center; 
+       @include flexCenter(); 
+        
+   }
+   a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0px 4px whitesmoke;
+    }
+   #nav1{
+       flex: 2;
+       font-size: 35px;
+       background-image: url(/Img/profilCircle.png);
+       background-repeat: no-repeat;
+       background-size: 60px;
+       background-position: 15px center;
+   }
+   #nav2{
+       flex: 1;
+       font-size: 27px;
+   }
+   #nav3{
+       flex: 1;
+       font-size: 27px;
+   }
+   #nav4{
+       flex:1;
+       font-size: 37px;
+       font-family: "HandTypo" ;
+   }
+   #nav5{
+        flex:1;
+        font-size: 27px;
+    }
+   #nav6{
+        flex:1;
+        font-size: 27px;
+    }
+   #nav7{
+        cursor: pointer;
+        flex:2;
+        font-size: 35px;
+        background-position: center center;
+        img{
+            width: 90px;
+        }
+        span{
+            text-shadow: 0px 4px whitesmoke;
+        }
+    };
+  };
+};
+
+#cart-Box{
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    margin:120px auto;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 500px;
+    border: 5px Solid black;
+    display: grid;
+    grid-template-areas: 
+    ". title ."
+    ". items ."
+    ". total .";
+    display: none;
+    .mytitle{
+        font-size: 50px;
+        text-align: center;
+        height: 20px;
+        padding-top: 10px;
+        grid-area: title;   
+        text-shadow: 2px 2px #888888;;
+    }
+    #list-items{
+        display: flex; 
+        flex-wrap: wrap;
+        margin-right: 30px;
+        padding-bottom: 45px;
+        padding-top: 45px;
+        grid-area: items;
+        .item-wrapper{
+            margin-left: 30px;
+        }
+        .item{
+            
+            flex:2;
+            height: 15em;
+            img{
+            max-height: 85%;
+            max-width: 100%;}
+            #taBort{
+                margin-top: 5px;
+            }
+        }
+        h2{
+            font-weight: 700;
+        }
+        
+    }
+    #total{
+        grid-area: total;
+        text-align: center;
+        font-size: 1.4em;
+        padding-top: 40px;
+        padding-bottom: 5px;
+        #buyBtn{
+            margin-top: 5px;
+            margin-left: 4em;
+        }
+        #clearBtn{
+            float: right;
+            margin-right: 15px;
+            margin-top: 6px;
+        }
+    }
+};
+
+main{
+    #CarouselFront{
+    padding-top: 120px;
+    img{
+        margin: 50px auto;
+    }
+    };
+    #blackBox{
+        height: 100px;
+        background-color: black;
+    };
+    #Clothes{
+        display:grid;
+        grid-gap:1.5em;
+        grid-template-areas:
+        ". . . . ." 
+    ". box1 box2 box3 ."
+    ". box4 box5 box6 ."
+    ". . . . .";
+        div{
+            cursor: pointer;
+            width: 262px;
+            height: 390px;
+            border: 3px solid rgb(197, 197, 197);
+            position: relative;
+            text-align: center;
+            &:hover{
+            border: 3px solid rgb(0, 0, 0);
+            display: block;
+                #overTextBox{
+                display: block;
+                position: absolute;
+                top: 85%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-decoration: none;
+                color: black;
+                text-shadow: 2px 2px #ffffff;
+                font-size: 18px;
+                background-color: rgba(255, 255, 255, 0.61);
+                border-radius: 12px;
+               }
+            }
+            img {
+            max-width: 100%;
+            max-height: 100%;
+            };
+            .SelectQuatity{
+                border: 6px solid rgb(0, 0, 0);
+                display: none;
+                position: absolute;
+                z-index: 1;
+                top:-3px;
+                left:-3px;
+                background-color: rgba(255, 255, 255, 0.61);
+                text-align: center;
+                .AddThisManyItems{
+                    width: 60px;
+                    position: absolute;
+                    left: 95px;
+                    top: 170px;
+                    border: 3px solid rgb(0, 0, 0);
+                };
+                button{
+                    left: 99px;
+                    top: 203px;
+                    position: absolute;
+                }
+            };
+        };
+        #overTextBox{
+        display:none;
+        };
+        .buyBtn{
+        width: 50px;
+        height: 50px;
+        z-index: 1;
+        position: absolute;
+        border-radius: 25px;
+        };
+        .clothes1{
+        grid-area: box1;
+        };
+        .clothes2{
+                grid-area: box2;
+        };
+        .clothes3{
+            grid-area: box3;
+        };
+        .clothes4{
+            grid-area: box4;
+        };
+        .clothes5{
+            grid-area: box5;
+        };
+        .clothes6{
+            grid-area: box6;
+        };
+    };
+};
+#orderComplete{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    margin:73px 305px !important;
+    width: 500px;
+    height: 300px;
+    background:rgb(0, 0, 0) url("/Img/lotusflower.png") 16px bottom/85px no-repeat;
+    text-align: center;
+    h1{
+        font-size: 30px;
+        font-weight: 700;
+        font-style: italic;
+        color: whitesmoke;
+        margin: 65px;
+    };
+    button{
+        position: relative;
+        top: 7px;
+        left: 225px;
+    };
+};
+
+
+
+
+
+
