@@ -8,7 +8,7 @@ function Product(id, productName, price, color, size, img){
     this.size = size;
     this.img = img;
 }
-
+// List of products
 let jacket = new Product(1, "Jacket", 300, "brown", "Medium", '<img src="Img/jacka.jpg">');
 let tShirt = new Product(2, "tShirt", 50, "black", "Large", '<img src="Img/tshirt.jpg">');
 let chain = new Product(3, "Chain", 100, "Gold", "One Size", '<img src="Img/chain.jpg">');
